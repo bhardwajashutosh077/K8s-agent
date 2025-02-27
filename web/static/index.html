@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubernetes Scaling Agent</title>
+    <script>
+        async function fetchLogs() {
+            const response = await fetch("/logs");
+            const logs = await response.text();
+            document.getElementById("log-output").innerText = logs;
+        }
+        setInterval(fetchLogs, 5000);
+    </script>
+</head>
+<body>
+    <h1>Kubernetes Scaling Agent</h1>
+    <pre id="log-output">Loading...</pre>
+</body>
+</html>

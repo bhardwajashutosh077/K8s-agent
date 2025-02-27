@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scaling-agent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scaling-agent
+  template:
+    metadata:
+      labels:
+        app: scaling-agent
+    spec:
+      containers:
+        - name: scaling-agent
+          image: ashutosh077/scaling-agent:latest
+          ports:
+            - containerPort: 8080
